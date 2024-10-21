@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>ubuntu创建应用的快捷方式</title>
+    <link href="/2024/10/21/ubuntu%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E7%9A%84%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F-1/"/>
+    <url>/2024/10/21/ubuntu%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E7%9A%84%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F-1/</url>
+    
+    <content type="html"><![CDATA[<p><strong>在ubuntu上我们通过deb包安装的软件可能会没有快捷方式，这个时候就需要我们自己在终端上创建快捷方式了。</strong></p><p><strong>主要流程有以下几步，这里我们以go语言的IDE goland为例</strong></p><h1 id="1-创建对应的desktop文件"><a href="#1-创建对应的desktop文件" class="headerlink" title="1.创建对应的desktop文件"></a>1.创建对应的desktop文件</h1><p>比如goland，我们需要在&#x2F;usr&#x2F;share&#x2F;applications目录下创建goland.desktop</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">cd /usr/share/applications <br>sudo nano /goland.desktop<br></code></pre></td></tr></table></figure><h1 id="2-编辑这个文件"><a href="#2-编辑这个文件" class="headerlink" title="2.编辑这个文件"></a>2.编辑这个文件</h1><p>把这个文件编辑一下，记得要加sudo</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">sudo vim goland.desktop<br></code></pre></td></tr></table></figure><p>内容如下</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c">[Desktop Entry]<br>Version=<span class="hljs-number">1.0</span><br>Type=Application<br>Name=XXX<span class="hljs-comment">//这里输你的应用的名称</span><br>Exec=/path/to/GoLand/bin/goland.sh<span class="hljs-comment">//这里输你的应用的实际路径</span><br>Icon=/path/to/GoLand/bin/goland.png<span class="hljs-comment">//这里输你的应用要用的图标的路径</span><br>Terminal=<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure><h1 id="3-更改文件的权限"><a href="#3-更改文件的权限" class="headerlink" title="3.更改文件的权限"></a>3.更改文件的权限</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">sudo chown xxx Goland.desktop<span class="hljs-comment">//xxx是你的用户名</span><br>sudo chmod <span class="hljs-number">755</span> Goland.desktop/修改权限<br></code></pre></td></tr></table></figure><h1 id="4-把这个文件复制一份到你的桌面"><a href="#4-把这个文件复制一份到你的桌面" class="headerlink" title="4.把这个文件复制一份到你的桌面"></a>4.把这个文件复制一份到你的桌面</h1><p>用cp命令复制</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">cp goland.desktop ~/桌面<br></code></pre></td></tr></table></figure><h1 id="5-将你桌面那个文件改为可运行"><a href="#5-将你桌面那个文件改为可运行" class="headerlink" title="5.将你桌面那个文件改为可运行"></a>5.将你桌面那个文件改为可运行</h1><p>直接右键，然后找到“允许运行”点击即可</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何在GNU/Linux下实现自己的shell</title>
     <link href="/2024/03/28/%E5%A6%82%E4%BD%95%E5%9C%A8GNU-Linux%E4%B8%8B%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84shell/"/>
     <url>/2024/03/28/%E5%A6%82%E4%BD%95%E5%9C%A8GNU-Linux%E4%B8%8B%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84shell/</url>
